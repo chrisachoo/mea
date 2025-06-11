@@ -1,15 +1,15 @@
 import { MoonIcon, SunIcon } from "lucide-react"
 import { useEffect, useState } from "react"
+import { cn } from "~/lib/utils"
 import { Button } from "../ui/button"
 
-export default function ModeToggle() {
-  const [theme, setTheme] = useState < "light" | "dark" | "system" > ("light")
+export default function ModeToggle({ className }: { readonly className?: string }) {
+  const [theme, setTheme] = useState <"light" | "dark" | "system"> ("light")
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
+    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
     setTheme(isDarkMode ? "dark" : "light")
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function ModeToggle() {
 
   return (
     <Button
-      className="cursor-pointer"
+      className={cn("cursor-pointer", className)}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       size="icon"
       variant="outline"
