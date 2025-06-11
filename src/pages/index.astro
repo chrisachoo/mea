@@ -1,25 +1,57 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import ModeToggle from "~/components/layouts/mode-toggle"
+import "../styles/global.css"
+import { Navbar } from "~/components/layouts/navbar"
+import { Hero } from "~/components/sections/hero"
+import { About } from "~/components/sections/about"
+import { Contact } from "~/components/sections/contact"
+import { Feature } from "~/components/sections/feature"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<script is:inline>
+  function getThemePreference() {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme")
+    }
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  }
+
+  const isDark = getThemePreference() === "dark"
+
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark")
+      localStorage.setItem("theme", isDark ? "dark" : "light")
+    })
+
+    observer.observe(document.documentElement, {
+      attributeFilter: ["class"],
+      attributes: true,
+    })
+  }
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro + TailwindCSS</title>
+  </head>
+
+  <body>
+    <main class="grid h-auto place-items-center content-center">
+      <Navbar client:load />
+      <div class="mt-24">
+        <Hero />
+        <About />
+        <Feature />
+        <Contact />
+      </div>
+    </main>
+  </body>
 </html>
