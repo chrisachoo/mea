@@ -1,6 +1,11 @@
 ---
 import ModeToggle from "~/components/layouts/mode-toggle"
 import "../styles/global.css"
+import { Navbar } from "~/components/layouts/navbar"
+import { Hero } from "~/components/sections/hero"
+import { About } from "~/components/sections/about"
+import { Contact } from "~/components/sections/contact"
+import { Feature } from "~/components/sections/feature"
 ---
 
 <script is:inline>
@@ -39,9 +44,14 @@ import "../styles/global.css"
   </head>
 
   <body>
-    <div class="grid h-screen place-items-center content-center">
-      <ModeToggle client:load />
-      <a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-    </div>
+    <main class="grid h-auto place-items-center content-center">
+      <Navbar client:load />
+      <div class="mt-24">
+        <Hero />
+        <About />
+        <Feature />
+        <Contact />
+      </div>
+    </main>
   </body>
 </html>
