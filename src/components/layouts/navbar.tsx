@@ -1,23 +1,39 @@
 import type { NavigationMenuProps } from "@radix-ui/react-navigation-menu"
 import { Menu, TreePalm } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link } from "~/components/ui/link"
 import { Separator } from "~/components/ui/separator"
 import { routeList } from "~/constants"
-import { Button } from "../ui/button"
-import { Link } from "../ui/link"
+import { cn } from "~/lib/utils"
+import { Button, LinkButton } from "../ui/button"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "../ui/navigation-menu"
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet"
 import ModeToggle from "./mode-toggle"
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 64)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <nav className="fixed top-6 inset-x-4 h-16 bg-background/70 border dark:border-secondary max-w-screen-xl mx-auto rounded-full">
+    <nav className={cn(`nav transition-all duration-300 ${scrolled ? "glass-effect" : "bg-transparent"}`)}>
       <div className="h-full flex items-center justify-between mx-auto px-4">
         <Link href="/">
           <TreePalm />
         </Link>
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
-        <ModeToggle className="hidden md:inline-flex" />
+
+        <div className="flex items-center gap-2">
+          <ModeToggle className="hidden md:inline-flex" />
+          <LinkButton href="/booking" variant="default">Book Now</LinkButton>
+        </div>
 
         {/* Mobile Menu */}
         <div className="flex items-center gap-4 md:hidden">
@@ -35,7 +51,7 @@ function NavMenu(props: Readonly<NavigationMenuProps>) {
         {routeList.map(({ href, label }) => (
           <NavigationMenuItem key={href}>
             <NavigationMenuLink asChild>
-              <Link href={href}>{label}</Link>
+              <Link href={href} scroll>{label}</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         ))}

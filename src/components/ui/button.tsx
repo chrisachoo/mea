@@ -56,4 +56,26 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+function LinkButton({
+  asChild = false,
+  className,
+  size,
+  variant,
+  ...props
+}: React.ComponentProps<"a">
+  & VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+  }) {
+  const Comp = asChild ? Slot : "a"
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ className, size, variant }))}
+      {...props}
+    />
+  )
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export { Button, buttonVariants, LinkButton }

@@ -12,10 +12,6 @@ interface FeaturesList {
 
 export const routeList: RouteList[] = [
   {
-    href: "#home",
-    label: "Home",
-  },
-  {
     href: "#features",
     label: "Features",
   },
