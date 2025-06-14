@@ -1,22 +1,10 @@
 import { MoonIcon, SunIcon } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useTheme } from "~/hooks/use-theme"
 import { cn } from "~/lib/utils"
 import { Button } from "../ui/button"
 
 export default function ModeToggle({ className }: { readonly className?: string }) {
-  const [theme, setTheme] = useState <"light" | "dark" | "system"> ("light")
-
-  useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark")
-    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
-    setTheme(isDarkMode ? "dark" : "light")
-  }, [])
-
-  useEffect(() => {
-    const isDark = theme === "dark" || (theme === "system"
-      && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
-  }, [theme])
+  const { setTheme, theme } = useTheme()
 
   return (
     <Button
