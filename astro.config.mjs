@@ -11,4 +11,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://chrisachoo.github.io',
+  base: 'mea',
 })

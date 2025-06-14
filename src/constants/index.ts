@@ -69,19 +69,19 @@ export const destinations = {
 }
 
 export const footerMenu = [
-  { link: "/terms", title: "Terms of Service" },
-  { link: "/privacy", title: "Privacy Policy" },
+  { link: "/mea/terms", title: "Terms of Service" },
+  { link: "/mea/privacy", title: "Privacy Policy" },
 ]
 
 export const footerResources = [
-  { icon: Image, link: "/gallery", title: "Image gallery" },
-  { icon: Bookmark, link: "/booking", title: "Booking & Price estimates" },
-  { icon: Info, link: "/support", title: "Help & Support" },
+  { icon: Image, link: "/mea/gallery", title: "Image gallery" },
+  { icon: Bookmark, link: "/mea/booking", title: "Booking & Price estimates" },
+  { icon: Info, link: "/mea/support", title: "Help & Support" },
 ]
 
 export const aboutLinks = [
-  { icon: Building, link: "/about", title: "About Us" },
-  { icon: UserRoundPen, link: "/company", title: "Company" },
+  { icon: Building, link: "/mea/about", title: "About Us" },
+  { icon: UserRoundPen, link: "/mea/company", title: "Company" },
 ]
 
 export const coreFeatures = [
