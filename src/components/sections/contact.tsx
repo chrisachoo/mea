@@ -24,9 +24,9 @@ export function Contact() {
             </p>
             <Link
               className="mt-4 font-medium text-primary"
-              href="mailto:akashmoradiya3444@gmail.com"
+              href="mailto:info@mbangoecoadventure.co.za"
             >
-              akashmoradiya3444@gmail.com
+              info@mbangoecoadventure.co.za
             </Link>
           </div>
           <div className="text-center flex flex-col items-center">
@@ -46,7 +46,7 @@ export function Contact() {
               {" "}
               <br />
               {" "}
-              VIC 3066 AU
+              Hazyview
             </Link>
           </div>
           <div className="text-center flex flex-col items-center">
@@ -59,7 +59,7 @@ export function Contact() {
               className="mt-4 font-medium text-primary"
               href="tel:akashmoradiya3444@gmail.com"
             >
-              +1 (555) 000-0000
+              +27 (555) 000-0000
             </Link>
           </div>
         </div>
