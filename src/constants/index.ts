@@ -1,16 +1,16 @@
-interface RouteList {
-  href: string
-  label: string
-}
+import {
+  Binoculars,
+  Bookmark,
+  Building,
+  Image,
+  Info,
+  PackagePlus,
+  School,
+  TentTree,
+  UserRoundPen,
+} from "lucide-react"
 
-interface FeaturesList {
-  category: string
-  details: string
-  title: string
-  tutorialLink: string
-}
-
-export const routeList: RouteList[] = [
+export const routeList = [
   {
     href: "#features",
     label: "Features",
@@ -33,26 +33,60 @@ export const routeList: RouteList[] = [
   },
 ]
 
-export const features: FeaturesList[] = [
+export const features = [
   {
-    category: "Marketing and Sales",
-    details:
-      "Take control over how and when to follow up with your leads. Store and reference leads in multiple tables and, from there, automatically send them personalized emails.",
-    title: "Collect and enrich leads your way",
-    tutorialLink: "#",
+    category: "School Excursions",
+    description:
+      "Curriculum-aligned field trips designed to make learning unforgettable — from ancient caves to modern ecosystems. Packages like the Mpumalanga Explorer, Heritage & History, and Bush Science Camp cover essential academic themes while sparking curiosity.",
+    href: "#school-excursions",
+    title: "Where the Classroom Meets the Wild",
   },
   {
-    category: "Project Management",
-    details:
-      "Organize tasks, deadlines, and team collaboration in one place. Use customizable boards to manage projects efficiently and automate routine updates.",
-    title: "Streamline your workflows effortlessly",
-    tutorialLink: "#",
+    category: "Adventure",
+    description:
+      "From bush camps to Viking-style team challenges, our adventures are crafted for explorers young and old. Whether you're hiking or tracking wildlife, every step is packed with excitement and growth.",
+    href: "#adventure",
+    title: "Fuel the Spirit of Discovery",
   },
   {
-    category: "Customer Support",
-    details:
-      "Track and resolve customer queries faster with an integrated ticketing system. Set priorities, automate follow-ups, and enhance satisfaction with personalized responses.",
-    title: "Deliver seamless customer experiences",
-    tutorialLink: "#",
+    category: "Travel & Tours",
+    description:
+      "Whether it's a family safari or a cultural weekend escape, we offer flexible, guided tours to South Africa’s most iconic destinations. Enjoy Kruger safaris, Garden Route adventures, and more — tailored for families, groups, and solo travelers.",
+    href: "#tours",
+    title: "Explore South Africa — Your Way",
   },
+]
+
+export const destinations = {
+  items: [
+    "Kruger National Park",
+    "Safari Game Reserves",
+    "Mountain Hiking Trails",
+    "Cultural Heritage Sites",
+  ],
+  title: "Top Destinations",
+  type: "location",
+}
+
+export const footerMenu = [
+  { link: "/terms", title: "Terms of Service" },
+  { link: "/privacy", title: "Privacy Policy" },
+]
+
+export const footerResources = [
+  { icon: Image, link: "/gallery", title: "Image gallery" },
+  { icon: Bookmark, link: "/booking", title: "Booking & Price estimates" },
+  { icon: Info, link: "/support", title: "Help & Support" },
+]
+
+export const aboutLinks = [
+  { icon: Building, link: "/about", title: "About Us" },
+  { icon: UserRoundPen, link: "/company", title: "Company" },
+]
+
+export const coreFeatures = [
+  { icon: School, title: "School Excursions" },
+  { icon: Binoculars, title: "Adventure Tours" },
+  { icon: TentTree, title: "Travel & Tours" },
+  { icon: PackagePlus, title: "Custom Packages" },
 ]
