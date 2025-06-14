@@ -2,11 +2,8 @@
 import ModeToggle from "~/components/layouts/mode-toggle"
 import "../styles/global.css"
 import { Navbar } from "~/components/layouts/navbar"
-import { Hero } from "~/components/sections/hero"
-import { About } from "~/components/sections/about"
-import { Contact } from "~/components/sections/contact"
-import { Feature } from "~/components/sections/feature"
-import { WhyUs } from "~/components/sections/why-us"
+import { Footer } from "~/components/layouts/footer"
+import Layout from "~/components/layouts/layout.astro"
 ---
 
 <script is:inline>
@@ -45,14 +42,10 @@ import { WhyUs } from "~/components/sections/why-us"
   </head>
 
   <body>
-    <main class="grid h-auto place-items-center content-center">
+    <main class="grid h-auto content-center relative">
       <Navbar client:load />
-      <div class="mt-24">
-        <Hero />
-        <Feature />
-        <Contact />
-        <WhyUs />
-      </div>
+      <Layout />
+      <Footer />
     </main>
   </body>
 </html>
