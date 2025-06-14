@@ -1,11 +1,12 @@
 import { Heart, Leaf, Shield, Star } from "lucide-react"
 import { Section } from "~/components/layouts/section"
+import { BackgroundGradient } from "~/components/ui/background-gradient"
 import { Badge } from "../ui/badge"
 
 export function WhyUs() {
   return (
     <Section id="why-choose-us" type="raw" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/70 to-secondary/50 dark:from-gray-900 dark:via-secondary/10 dark:to-secondary/5 nature-pattern" />
+      <BackgroundGradient />
       <div className="max-w-screen-xl w-full mx-auto px-6">
         <div className="text-center space-y-6 mb-20 fade-in-up">
           <Badge className="bg-secondary text-primary border-primary/20">
