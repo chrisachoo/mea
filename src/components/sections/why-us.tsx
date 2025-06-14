@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge"
 export function WhyUs() {
   return (
     <Section type="raw" className="py-24 bg-gradient-to-br from-muted/30 to-background">
-      <div className="container px-4 md:px-6">
+      <div className="max-w-screen-xl w-full mx-auto px-6">
         <div className="text-center space-y-6 mb-20 fade-in-up">
           <Badge className="bg-secondary text-primary border-primary/20">
             <Shield className="h-3 w-3 mr-1" />

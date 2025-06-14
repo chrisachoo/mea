@@ -4,7 +4,7 @@ import { Link } from "~/components/ui/link"
 
 export function Contact() {
   return (
-    <Section className="flex min-h-6/12 items-center justify-center" id="contact">
+    <Section className="flex min-h-1/5 items-center justify-center" id="contact">
       <div className="text-center">
         <b className="text-muted-foreground">Contact Us</b>
         <h2 className="mt-3 text-2xl md:text-4xl font-bold tracking-tight">

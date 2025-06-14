@@ -22,16 +22,19 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav className={cn(`nav transition-all duration-300 ${scrolled ? "glass-effect" : "bg-transparent"}`)}>
-      <div className="h-full flex items-center justify-between mx-auto px-4">
+    <nav className={cn(`sticky top-0 z-50 w-full transition-all duration-300 ${
+      scrolled ? "glass-effect shadow-lg" : "bg-transparent"
+    }`)}
+    >
+      <div className="flex h-16 items-center max-w-screen-xl justify-between mx-auto px-6">
         <Link href="/">
           <TreePalm />
         </Link>
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
 
-        <div className="flex items-center gap-2">
-          <ModeToggle className="hidden md:inline-flex" />
+        <div className="items-center gap-2 hidden md:inline-flex">
+          <ModeToggle />
           <LinkButton href="/booking" variant="default">Book Now</LinkButton>
         </div>
 

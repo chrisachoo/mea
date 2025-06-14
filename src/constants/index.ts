@@ -55,18 +55,4 @@ export const features: FeaturesList[] = [
     title: "Deliver seamless customer experiences",
     tutorialLink: "#",
   },
-  {
-    category: "Team Collaboration",
-    details:
-      "Simplify communication and align team efforts with shared boards and real-time updates. Enable transparent goal tracking and instant feedback for better results.",
-    title: "Stay connected with your team",
-    tutorialLink: "#",
-  },
-  {
-    category: "Product Development",
-    details:
-      "Bring your product ideas to life by managing prototypes, feedback, and iterations in one place. Collaborate with your team to refine features and release with confidence.",
-    title: "Accelerate innovation with ease",
-    tutorialLink: "#",
-  },
 ]
