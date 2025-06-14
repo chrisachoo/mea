@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "~/lib/utils";
+import { cn } from "~/lib/utils"
 
 interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Width of the border in pixels
    * @default 1
    */
-  borderWidth?: number;
+  borderWidth?: number
   /**
    * Duration of the animation in seconds
    * @default 14
    */
-  duration?: number;
+  duration?: number
   /**
    * Color of the border, can be a single color or an array of colors
    * @default "#000000"
    */
-  shineColor?: string | string[];
+  shineColor?: string | string[]
 }
 
 /**
@@ -29,9 +29,9 @@ interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export function ShineBorder({
   borderWidth = 1,
+  className,
   duration = 14,
   shineColor = "#000000",
-  className,
   style,
   ...props
 }: Readonly<ShineBorderProps>) {
@@ -41,15 +41,15 @@ export function ShineBorder({
         {
           "--border-width": `${borderWidth}px`,
           "--duration": `${duration}s`,
-          backgroundImage: `radial-gradient(transparent,transparent, ${
+          "backgroundImage": `radial-gradient(transparent,transparent, ${
             Array.isArray(shineColor) ? shineColor.join(",") : shineColor
           },transparent,transparent)`,
-          backgroundSize: "300% 300%",
-          mask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-          WebkitMask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-          WebkitMaskComposite: "xor",
-          maskComposite: "exclude",
-          padding: "var(--border-width)",
+          "backgroundSize": "300% 300%",
+          "mask": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+          "maskComposite": "exclude",
+          "padding": "var(--border-width)",
+          "WebkitMask": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+          "WebkitMaskComposite": "xor",
           ...style,
         } as React.CSSProperties
       }
@@ -59,5 +59,5 @@ export function ShineBorder({
       )}
       {...props}
     />
-  );
+  )
 }
