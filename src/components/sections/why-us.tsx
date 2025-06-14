@@ -4,12 +4,13 @@ import { Badge } from "../ui/badge"
 
 export function WhyUs() {
   return (
-    <Section type="raw" className="py-24 bg-gradient-to-br from-muted/30 to-background">
+    <Section id="why-choose-us" type="raw" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/70 to-secondary/50 dark:from-gray-900 dark:via-secondary/10 dark:to-secondary/5 nature-pattern" />
       <div className="max-w-screen-xl w-full mx-auto px-6">
         <div className="text-center space-y-6 mb-20 fade-in-up">
           <Badge className="bg-secondary text-primary border-primary/20">
             <Shield className="h-3 w-3 mr-1" />
-            Why Choose WildQuest
+            Why Choose MEA
           </Badge>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl font-playfair text-foreground">
             Excellence in Every Adventure
@@ -50,21 +51,21 @@ export function WhyUs() {
               icon: Leaf,
               title: "Eco-Conscious",
             },
-          ].map((feature, index) => (
+          ].map(({ bgColor, color, description, icon: Icon, title }, index) => (
             <div
-              key={index}
+              key={title}
               className="text-center space-y-4 group fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div
-                className={`mx-auto w-20 h-20 ${feature.bgColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl`}
+                className={`mx-auto w-20 h-20 ${bgColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl`}
               >
-                <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center`}>
-                  <feature.icon className="h-6 w-6 text-white" />
+                <div className={`w-12 h-12 ${color} rounded-xl flex items-center justify-center`}>
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold font-playfair">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-semibold font-playfair">{title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{description}</p>
             </div>
           ))}
         </div>
