@@ -1,7 +1,8 @@
 import type { NavigationMenuProps } from "@radix-ui/react-navigation-menu"
-import { Menu, TreePalm } from "lucide-react"
+import { Menu } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Link } from "~/components/ui/link"
+import { Logo } from "~/components/ui/logo"
 import { Separator } from "~/components/ui/separator"
 import { routeList } from "~/constants"
 import { cn } from "~/lib/utils"
@@ -14,7 +15,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 64)
+      setScrolled(window.scrollY > 16)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -22,13 +23,13 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav className={cn(`sticky top-0 z-50 w-full transition-all duration-300 ${
+    <header className={cn(`sticky top-0 z-50 w-full transition-all duration-300 ${
       scrolled ? "glass-effect shadow-lg" : "bg-transparent"
     }`)}
     >
       <div className="flex h-16 items-center max-w-screen-xl justify-between mx-auto px-6">
         <Link href="/">
-          <TreePalm />
+          <Logo />
         </Link>
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
@@ -43,7 +44,7 @@ export function Navbar() {
           <NavigationSheet />
         </div>
       </div>
-    </nav>
+    </header>
   )
 }
 
@@ -77,9 +78,8 @@ function NavigationSheet() {
       >
         <SheetHeader>
           <SheetTitle className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <TreePalm className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-              Mbango Eco Adventure
+            <Link href="/">
+              <Logo />
             </Link>
           </SheetTitle>
           <Separator className="mt-2" />
