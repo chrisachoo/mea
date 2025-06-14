@@ -6,11 +6,11 @@ import { defineConfig } from "astro/config"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  base: "mea",
 
+  integrations: [react()],
+  site: "https://chrisachoo.github.io",
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://chrisachoo.github.io',
-  base: 'mea',
 })

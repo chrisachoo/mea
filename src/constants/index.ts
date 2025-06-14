@@ -10,28 +10,27 @@ import {
   UserRoundPen,
 } from "lucide-react"
 
+// MARK: Header links
 export const routeList = [
-  {
-    href: "#features",
-    label: "Features",
-  },
-  {
-    href: "#blog",
-    label: "Blog",
-  },
   {
     href: "#about",
     label: "About",
   },
   {
-    href: "#contact",
-    label: "Contact",
+    href: "#features",
+    label: "Features",
   },
   {
     href: "#faq",
-    label: "FAQ",
+    label: "Faq",
+  },
+  {
+    href: "#contact",
+    label: "Contact",
   },
 ]
+
+// MARK: Features
 
 export const features = [
   {
@@ -56,6 +55,38 @@ export const features = [
     title: "Explore South Africa — Your Way",
   },
 ]
+
+// MARK: FAQ
+
+export const faq = [
+  {
+    answer:
+      "Yes! All our excursions and tours can include safe transport, meals, and even overnight accommodation.",
+    question: "Do you offer transport and meals?",
+  },
+  {
+    answer:
+      "Absolutely. School programs are built around CAPS outcomes for each grade.",
+    question: "Are trips curriculum-aligned?",
+  },
+  {
+    answer:
+      "Yes — teachers and parent volunteers are welcome and catered for.",
+    question: "Can adults join school excursions?",
+  },
+  {
+    answer:
+      "All our facilitators are certified in first aid and youth/adventure leadership.",
+    question: "Are your guides trained?",
+  },
+  {
+    answer:
+      "We recommend 4–8 weeks before the desired travel date for schools and 2+ weeks for private tours.",
+    question: "How far in advance should we book?",
+  },
+]
+
+// MARK: Footer
 
 export const destinations = {
   items: [
