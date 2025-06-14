@@ -120,11 +120,8 @@
 }
 
 @layer components {
-  .nav {
-    @apply fixed top-6 inset-x-4 h-16 max-w-screen-xl mx-auto rounded-full z-40;
-  }
   .glass-effect {
-    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10;
   }
 
   .floating-animation {
