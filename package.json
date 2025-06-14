@@ -57,5 +57,9 @@
   "lint-staged": {
     "*.{json,md}": "pnpm format",
     "*.{astro,ts,tsx}": "pnpm lint"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
   }
 }
