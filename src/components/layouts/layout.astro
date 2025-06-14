@@ -4,14 +4,14 @@ import { About } from "~/components/sections/about"
 import { Contact } from "~/components/sections/contact"
 import { Feature } from "~/components/sections/feature"
 import { WhyUs } from "~/components/sections/why-us"
-import { Footer } from "~/components/layouts/footer"
 import { FAQ } from "~/components/sections/faqs"
+import { CTA } from "~/components/sections/cta"
 ---
 
-<div lang="en" class="mt-24">
-  <Hero />
+<div class="flex w-full flex-col">
+  <Hero client:load />
   <Feature />
   <Contact />
   <WhyUs />
-  <FAQ />
+  <CTA />
 </div>

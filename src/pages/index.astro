@@ -42,10 +42,10 @@ import Layout from "~/components/layouts/layout.astro"
   </head>
 
   <body>
-    <main class="grid h-auto content-center relative">
-      <Navbar client:load />
+    <main class="flex min-h-screen flex-col justify-between font-nunito">
+      <Navbar client:idle />
       <Layout />
-      <Footer />
+      <Footer client:idle />
     </main>
   </body>
 </html>
